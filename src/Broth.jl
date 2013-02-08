@@ -4,8 +4,14 @@ module Broth
 
 using DataFrames, Calendar, UTF16, Thyme
 
-export minvarport,
-       stock_returns,
+export stock_returns,
+       globalmin,
+       efficient,
+       tangency,
+       frontier,
+       build_globalmin,
+       build_efficient,
+       build_tangency,
 
 ## testsuite macro
        @broth
