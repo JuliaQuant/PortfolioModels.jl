@@ -5,12 +5,14 @@ module Broth
 using DataFrames, Calendar, UTF16, Thyme
 
 export minvarport,
+       stock_returns,
+
 ## testsuite macro
        @broth
 
-include("foo.jl")
-include("bar.jl")
-include("baz.jl")
+include("preprocess.jl")
+include("solve.jl")
+include("build.jl")
 include("testbroth.jl")
 
 end 

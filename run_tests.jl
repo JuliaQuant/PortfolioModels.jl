@@ -2,9 +2,9 @@ require("test.jl")
 
 using Broth
 
-my_tests = ["test/foo.jl",
-            "test/bar.jl",
-            "test/baz.jl"]
+my_tests = ["test/preproces.jl",
+            "test/solve.jl",
+            "test/build.jl"]
 
 print_with_color(:cyan, "Running tests: ") 
 println("")
