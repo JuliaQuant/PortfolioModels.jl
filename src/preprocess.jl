@@ -30,7 +30,7 @@ end
 
 # default to last three years, monthly data
 
-read_yahoo_for_sixty_months(stock::String) = read_yahoo_for_sixty_months(stock::String, month(now()), day(now()), year(now())-3, month(now()),  day(now()), year(now()), "m")
+read_yahoo_for_sixty_months(stock::String) = read_yahoo_for_sixty_months(stock::String, month(now()), day(now()), year(now())-5, month(now()),  day(now()), year(now()), "m")
 
 function stock_returns{T <: Union(ASCIIString, UTF8String)}(list::Array{T})
 
