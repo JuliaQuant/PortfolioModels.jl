@@ -2,7 +2,7 @@ require("test.jl")
 
 using Broth
 
-my_tests = ["test/preproces.jl",
+my_tests = ["test/preprocess.jl",
             "test/solve.jl",
             "test/build.jl"]
 

@@ -46,11 +46,11 @@ function stock_returns{T <: Union(ASCIIString, UTF8String)}(list::Array{T})
   s4 = read_yahoo_for_sixty_months(list[4]) 
   s5 = read_yahoo_for_sixty_months(list[5]) 
 
-  r1 = simple_return(s1["Adj"])
-  r2 = simple_return(s2["Adj"])
-  r3 = simple_return(s3["Adj"])
-  r4 = simple_return(s4["Adj"])
-  r5 = simple_return(s5["Adj"])
+  r1 = log_return(s1["Adj"])
+  r2 = log_return(s2["Adj"])
+  r3 = log_return(s3["Adj"])
+  r4 = log_return(s4["Adj"])
+  r5 = log_return(s5["Adj"])
 
   df = DataFrame(quote
                  $str1 = $r1 
@@ -107,17 +107,3 @@ end
 
 # default to last three years, daily data
 read_yahoo(stock::String) = read_yahoo(stock::String, month(now()), day(now()), year(now())-3, month(now()),  day(now()), year(now()), "d")
-
-# alias
-
-yip = read_yahoo
-
-
-
-
-
-
-
-
-
-

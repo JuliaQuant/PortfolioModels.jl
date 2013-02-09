@@ -8,7 +8,9 @@ function globalmin(df::DataFrame) #hard-coded for four assets
   names  = colnames(df)
   onevec = ones(ncol(df))
   sigma  = cov(df)
-  port   = (sigma' * onevec) / (onevec' * sigma' * onevec)
+  invsig = inv(sigma)
+  port   = (invsig * onevec) / (onevec' * invsig * onevec)
+  # port   = rowsums(DataArray(invsig)) / sum(invsig) # alternate method 
 
   gminvar = DataFrame(quote
                      $(names[1]) = $port[1]              
