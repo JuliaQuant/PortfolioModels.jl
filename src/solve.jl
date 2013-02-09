@@ -20,7 +20,20 @@ function globalmin(df::DataFrame) #hard-coded for four assets
                       end)              
   gminvar
 end
- 
+
+function modelparams(df::AbstractDataFrame)
+  df = copy(df)
+
+  #muhat  = mean(EachRow(df))
+  muhat  = float([mean(df[:,i]) for i in 1:ncol(df)])
+  varhat = float([var(df[:,i]) for i in 1:ncol(df)])
+  sdhat  = float([std(df[:,i]) for i in 1:ncol(df)])
+  covmat = cov(df) 
+  cormat = cor(df) 
+
+  return muhat, varhat, sdhat, covmat, cormat
+end
+
 function efficient(x)
   #code here
 end
