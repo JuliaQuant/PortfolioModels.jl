@@ -4,7 +4,17 @@ module Broth
 
 using DataFrames, Calendar, UTF16, Thyme
 
-export stock_returns,
+type Portfolio
+  mean
+  var
+  std
+  covmat
+  cormat
+  weights
+end
+
+export Portfolio, 
+       stock_returns,
        read_monthlies,
        modelparams,
        globalmin,
