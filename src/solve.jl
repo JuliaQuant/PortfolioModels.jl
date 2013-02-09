@@ -2,7 +2,7 @@
 # global minimum variance portfolio
 # returns the tip of the bullet
 
-function globalmin(df::DataFrame) #hard-coded for five assets
+function globalmin(df::DataFrame) #hard-coded for four assets
 
   df     = copy(df)
   names  = colnames(df)
@@ -15,7 +15,6 @@ function globalmin(df::DataFrame) #hard-coded for five assets
                      $(names[2]) = $port[2]              
                      $(names[3]) = $port[3]              
                      $(names[4]) = $port[4]              
-                     $(names[5]) = $port[5]           
                       end)              
   gminvar
 end

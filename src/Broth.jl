@@ -5,6 +5,7 @@ module Broth
 using DataFrames, Calendar, UTF16, Thyme
 
 export stock_returns,
+       read_monthlies,
        globalmin,
        efficient,
        tangency,
