@@ -1,8 +1,8 @@
-using DataFrames, Calendar, UTF16, Thyme 
+using DataFrames, Calendar, UTF16, TimeSeries
 
-module Broth
+module Portfolio
 
-using DataFrames, Calendar, UTF16, Thyme
+using DataFrames, Calendar, UTF16, TimeSeries
 
 type Portfolio
   mean
@@ -26,11 +26,11 @@ export Portfolio,
        build_tangency,
 
 ## testsuite macro
-       @broth
+       @portfolio
 
 include("preprocess.jl")
 include("solve.jl")
 include("build.jl")
-include("testbroth.jl")
+include("testportfolio.jl")
 
 end 
