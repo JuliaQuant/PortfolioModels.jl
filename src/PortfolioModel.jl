@@ -1,6 +1,6 @@
 using DataFrames, Calendar, UTF16, TimeSeries
 
-module Portfolio
+module PortfolioModel 
 
 using DataFrames, Calendar, UTF16, TimeSeries
 
@@ -31,6 +31,6 @@ export Portfolio,
 include("preprocess.jl")
 include("solve.jl")
 include("build.jl")
-include("testportfolio.jl")
+include("testportfoliomodel.jl")
 
 end 

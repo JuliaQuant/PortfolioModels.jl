@@ -1,6 +1,6 @@
 require("test.jl")
 
-using Portfolio
+using PortfolioModel
 
 my_tests = ["test/preprocess.jl",
             "test/solve.jl",

@@ -1,4 +1,4 @@
-d  = read_monthlies(Pkg.dir("Broth", "test", "data"), "monthlies.csv")
+d  = read_monthlies(Pkg.dir("PortfolioModel", "test", "data"), "monthlies.csv")
 df = d[:, 2:end]
 
 g  = globalmin(df)
