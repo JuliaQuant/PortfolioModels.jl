@@ -26,7 +26,7 @@ export Portfolio,
        build_tangency,
 
 ## testsuite macro
-       @portfolio
+       @portfoliomodel
 
 include("preprocess.jl")
 include("solve.jl")

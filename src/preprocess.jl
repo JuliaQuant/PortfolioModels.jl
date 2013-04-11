@@ -62,13 +62,11 @@ function stock_returns{T <: Union(ASCIIString, UTF8String)}(list::Array{T})
   df[2:end, :]
 end
 
-function read_monthlies(dir::String, filename::String)
+function read_monthlies(filename::String)
 
-csv = string(dir, "/", filename)
-df  = read_table(csv)
+df  = read_table(filename)
+time_conversion =  Calendar.parse("MMM-yy", df[:,1]) 
 
-time_conversion = map(x -> parse("MMM-yy", x), 
-                     convert(Array{UTF16String}, vector(df[:,1])))
 within!(df, quote
         Date = $(time_conversion)
         end)

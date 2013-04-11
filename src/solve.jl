@@ -2,22 +2,23 @@
 # global minimum variance portfolio
 # returns the tip of the bullet
 
-function globalmin(df::DataFrame) #hard-coded for four assets
+function globalmin(df::DataFrame) 
 
   df     = copy(df)
   names  = colnames(df)
-  onevec = ones(ncol(df))
+  onevec = ones(ncol(df)-1)
   sigma  = cov(df)
   invsig = inv(sigma)
   port   = (invsig * onevec) / (onevec' * invsig * onevec)
   # port   = rowsums(DataArray(invsig)) / sum(invsig) # alternate method 
 
-  gminvar = DataFrame(quote
-                     $(names[1]) = $port[1]              
-                     $(names[2]) = $port[2]              
-                     $(names[3]) = $port[3]              
-                     $(names[4]) = $port[4]              
-                      end)              
+  gminvar = DataFrame()
+
+  for i in 2:length(names)
+    colname  = names[i]
+    within!(gminvar, :($colname = $port[$i-1]))
+  end
+
   gminvar
 end
 
