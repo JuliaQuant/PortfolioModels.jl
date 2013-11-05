@@ -1,4 +1,5 @@
-df = read_monthlies(Pkg.dir("PortfolioModel/test/data/monthlies.csv"))
+#df = read_monthlies(Pkg.dir("PortfolioModel/test/data/monthlies.csv"))
+df = readtime(Pkg.dir("PortfolioModel/test/data/monthlies.csv"))
 
 g  = globalmin(df)
 

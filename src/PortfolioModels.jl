@@ -1,8 +1,8 @@
-using DataFrames, Calendar, UTF16, TimeSeries
+using DataFrames, Datetime, TimeSeries
 
-module PortfolioModel 
+module PortfolioModels
 
-using DataFrames, Calendar, UTF16, TimeSeries
+using DataFrames, Datetime, TimeSeries
 
 type Portfolio
   mean
@@ -26,11 +26,11 @@ export Portfolio,
        build_tangency,
 
 ## testsuite macro
-       @portfoliomodel
+       @portfoliomodels
 
 include("preprocess.jl")
 include("solve.jl")
 include("build.jl")
-include("testportfoliomodel.jl")
+include("testportfoliomodels.jl")
 
 end 
