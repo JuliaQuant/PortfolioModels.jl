@@ -1,5 +1,4 @@
-require("test.jl")
-
+using Base.Test
 using PortfolioModels
 
 my_tests = ["test/preprocess.jl",
