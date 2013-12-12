@@ -1,9 +1,9 @@
 using Base.Test
 using PortfolioModels
 
-my_tests = ["test/preprocess.jl",
-            "test/solve.jl",
-            "test/build.jl"]
+my_tests = ["preprocess.jl",
+            "solve.jl",
+            "build.jl"]
 
 print_with_color(:cyan, "Running tests: ") 
 println("")
