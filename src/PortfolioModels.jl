@@ -31,6 +31,6 @@ export Portfolio,
 include("preprocess.jl")
 include("solve.jl")
 include("build.jl")
-include("test/testmacro.jl")
+include("../test/testmacro.jl")
 
 end 
